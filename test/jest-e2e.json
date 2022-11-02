@@ -1,9 +1,19 @@
 {
-  "moduleFileExtensions": ["js", "json", "ts"],
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
   "rootDir": ".",
   "testEnvironment": "node",
   "testRegex": ".e2e-spec.ts$",
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@sysConfig/config/(.*)": "<rootDir>/../libs/config/src/$1",
+    "@sysConfig/config": "<rootDir>/../libs/config/src",
+    "@DB/influx/(.*)": "<rootDir>/../libs/influx/src/$1",
+    "@DB/influx": "<rootDir>/../libs/influx/src"
   }
 }

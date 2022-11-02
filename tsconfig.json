@@ -11,6 +11,20 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@sysConfig/config": [
+        "libs/config/src"
+      ],
+      "@sysConfig/config/*": [
+        "libs/config/src/*"
+      ],
+      "@DB/influx": [
+        "libs/influx/src"
+      ],
+      "@DB/influx/*": [
+        "libs/influx/src/*"
+      ]
+    }
   }
 }

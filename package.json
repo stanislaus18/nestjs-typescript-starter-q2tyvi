@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -19,9 +19,13 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@influxdata/influxdb-client": "^1.31.0",
+    "@influxdata/influxdb-client-apis": "^1.31.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "dotenv": "^16.0.3",
+    "env-var": "^7.3.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.5"
   },
@@ -54,7 +58,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": ".",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
@@ -62,7 +66,15 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/src/",
+      "<rootDir>/libs/"
+    ],
+    "moduleNameMapper": {
+      "^@sysConfig/config(|/.*)$": "<rootDir>/libs/config/src/$1",
+      "^@DB/influx(|/.*)$": "<rootDir>/libs/influx/src/$1"
+    }
   }
 }
