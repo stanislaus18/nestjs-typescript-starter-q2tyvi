@@ -13,7 +13,7 @@ export class AppController {
   getHello(): string {
     // const writeApi = this.energyMeasurementService.writeEnergyToDB();
 
-    this.energyMeasurementService.readEnergyFromDB();
+   // this.energyMeasurementService.readEnergyFromDB();
 
     return this.appService.getHello();
   }
