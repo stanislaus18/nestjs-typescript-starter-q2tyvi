@@ -24,6 +24,12 @@
       ],
       "@DB/influx/*": [
         "libs/influx/src/*"
+      ],
+      "@socket/socket-connection": [
+        "libs/socket-connection/src"
+      ],
+      "@socket/socket-connection/*": [
+        "libs/socket-connection/src/*"
       ]
     }
   }

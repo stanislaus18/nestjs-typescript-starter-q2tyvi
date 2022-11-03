@@ -14,6 +14,8 @@
     "@sysConfig/config/(.*)": "<rootDir>/../libs/config/src/$1",
     "@sysConfig/config": "<rootDir>/../libs/config/src",
     "@DB/influx/(.*)": "<rootDir>/../libs/influx/src/$1",
-    "@DB/influx": "<rootDir>/../libs/influx/src"
+    "@DB/influx": "<rootDir>/../libs/influx/src",
+    "@socket/socket-connection/(.*)": "<rootDir>/../libs/socket-connection/src/$1",
+    "@socket/socket-connection": "<rootDir>/../libs/socket-connection/src"
   }
 }

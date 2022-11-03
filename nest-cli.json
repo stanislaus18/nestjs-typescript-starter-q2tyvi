@@ -24,6 +24,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/influx/tsconfig.lib.json"
       }
+    },
+    "socket-connection": {
+      "type": "library",
+      "root": "libs/socket-connection",
+      "entryFile": "index",
+      "sourceRoot": "libs/socket-connection/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/socket-connection/tsconfig.lib.json"
+      }
     }
   }
 }
