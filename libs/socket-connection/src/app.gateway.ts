@@ -54,7 +54,7 @@ export class AppGateway
   public async ac(client: Socket, data: { name: string; value: boolean }) {
     client.join('AC');
 
-    this.serverEmitSwitch('AC_SWITCH', data.value);
+    this.serverEmitSwitch('AC_SWITCH', data);
 
     if (data) {
       console.log(data);
@@ -74,7 +74,7 @@ export class AppGateway
   public async tv(client: Socket, data: { name: string; value: boolean }) {
     client.join('TV');
 
-    this.serverEmitSwitch('TV_SWITCH', data.value);
+    this.serverEmitSwitch('TV_SWITCH', data);
 
     if (data) {
       console.log(data);
@@ -94,7 +94,7 @@ export class AppGateway
   public async lights(client: Socket, data: { name: string; value: boolean }) {
     client.join('LIGHTS');
 
-    this.serverEmitSwitch('LIGHTS_SWITCH', data.value);
+    this.serverEmitSwitch('LIGHTS_SWITCH', data);
 
     if (data) {
       console.log(data);
@@ -115,7 +115,7 @@ export class AppGateway
   public async fridge(client: Socket, data: { name: string; value: boolean }) {
     client.join('FRIDGE');
 
-    this.serverEmitSwitch('FRIDGE_SWITCH', data.value);
+    this.serverEmitSwitch('FRIDGE_SWITCH', data);
 
     if (data) {
       console.log(data);
@@ -247,7 +247,7 @@ export class AppGateway
     });
   }
 
-  serverEmitSwitch(type: string, value: boolean) {
-    this.server.emit(type, value);
+  serverEmitSwitch(type: string, data: any) {
+    this.server.emit(type, data);
   }
 }
